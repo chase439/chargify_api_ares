@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = '1.3.7'
   
   s.name    = 'chargify_api_ares'
-  s.version = '0.5.2'
+  s.version = '0.5.3'
   s.date    = '2012-12-15'
   s.summary = 'A Chargify API wrapper for Ruby using ActiveResource'
   s.description = ''
@@ -27,5 +27,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency('faker', '~> 1.0.1')
   s.add_development_dependency('guard-rspec', '~> 0.5.0')
   s.add_development_dependency('growl', '~> 1.0.3')
-  s.add_development_dependency('rb-fsevent', '~> 0.4.2')
+  s.add_development_dependency('rb-fsevent', '~> 0.9.1')
 end

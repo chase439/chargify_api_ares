@@ -1,3 +1,4 @@
+require 'digest/sha1'
 require 'active_resource'
 require 'chargify_api_ares/config'
 require 'chargify_api_ares/resources/base'

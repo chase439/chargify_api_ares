@@ -5,6 +5,17 @@ module Chargify
       find(:first, :params => {:customer_id => customer.id})
     end
 
+		def self.hosted_page_url(page_name, subscription_id)
+			message = "#{page_name}--#{subscription_id}--#{Chargify.hosted_page_shared_key}"
+			token = Digest::SHA1.hexdigest(message)[0..9]
+			site_host = site.to_s.ends_with?('/') ? site.to_s : "#{site.to_s}/" # Not sure why trailing slash isn't consistent?
+			"#{site_host}#{page_name}/#{subscription_id}/#{token}"
+		end
+
+		def update_payment_page_url
+			self.class.hosted_page_url("update_payment", self.id)
+		end
+	
     # Strip off nested attributes of associations before saving, or type-mismatch errors will occur
     def save
       self.attributes.delete('customer')
